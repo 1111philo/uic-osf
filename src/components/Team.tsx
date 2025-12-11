@@ -65,7 +65,7 @@ export const Team: React.FC = () => {
 
                     <TeamMember
                         name="Stefin Pasternak"
-                        bio="Leading AI Leaders, while managing the fund's strategic initiatives to gaurantee equitable outcomes."
+                        bio="Leading AI Leaders, while managing the fund's strategic initiatives to gaurantee equitable and sustainableoutcomes."
                         imageUrl={stefinImg}
                         linkedinUrl="https://www.linkedin.com/in/stephen-pasternak-11979b155/"
                         websiteUrl="https://www.stefinpasternak.com/"
