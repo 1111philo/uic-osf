@@ -85,7 +85,7 @@ export const Bounties: React.FC<BountiesProps> = ({ selectedProject = 'all', onS
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-uic-blue mb-4">Open Bounties</h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                        Our primary work is managing bounties for projects that work toward the public good.
+                        The fund manages bounties for projects that work toward the public good.
                     </p>
 
                     <div className="bg-blue-50 border border-blue-100 rounded-lg p-6 max-w-2xl mx-auto text-left">

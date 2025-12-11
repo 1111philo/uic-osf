@@ -33,7 +33,7 @@ export const About: React.FC = () => {
                                         <span className="w-2 h-2 mt-2.5 bg-uic-red rounded-full mr-3 flex-shrink-0"></span>
                                         <span>
                                             <a href="https://github.com/equalifyeverything/" target="_blank" rel="noopener noreferrer" className="font-bold text-gray-900 hover:text-uic-blue underline decoration-gray-300 hover:decoration-uic-blue transition-all">Equalify</a>,
-                                            an Open Source accessibility ecosystem.
+                                            an Open Source accessibility ecosystem maintained by the <a href="https://it.uic.edu/accessibility" className="font-semibold">UIC's Digital Accessibility team</a>.
                                         </span>
                                     </li>
                                     <li className="flex items-start">
