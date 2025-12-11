@@ -5,20 +5,18 @@ import stefinImg from '../assets/stefin.jpeg';
 
 interface TeamMemberProps {
     name: string;
-    role: string;
     bio: string;
     imageUrl: string;
     linkedinUrl: string;
     websiteUrl: string;
 }
 
-const TeamMember: React.FC<TeamMemberProps> = ({ name, role, bio, imageUrl, linkedinUrl, websiteUrl }) => (
+const TeamMember: React.FC<TeamMemberProps> = ({ name, bio, imageUrl, linkedinUrl, websiteUrl }) => (
     <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center text-center border border-gray-100 hover:shadow-xl transition-shadow duration-300">
         <div className="w-32 h-32 mb-4 rounded-full overflow-hidden border-4 border-gray-50 shadow-inner">
             <img src={imageUrl} alt={name} className="w-full h-full object-cover" />
         </div>
         <h3 className="text-xl font-bold text-gray-900 mb-1">{name}</h3>
-        <p className="text-uic-red font-medium text-sm mb-3">{role}</p>
         <p className="text-gray-600 text-sm mb-6 leading-relaxed">
             {bio}
         </p>
@@ -59,7 +57,6 @@ export const Team: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <TeamMember
                         name="Blake Bertuccelli-Booth"
-                        role="Open Source Lead"
                         bio="Leading 1111 and Equalify, while fostering partnerships to advance technologies for public benefit."
                         imageUrl={blakeImg}
                         linkedinUrl="https://www.linkedin.com/in/blake1111/"
@@ -68,8 +65,7 @@ export const Team: React.FC = () => {
 
                     <TeamMember
                         name="Stefin Pasternak"
-                        role="Strategic Partner"
-                        bio="Leading AI Leaders, while managing the fund's strategic initiatives that gaurantee equitable access."
+                        bio="Leading AI Leaders, while managing the fund's strategic initiatives to gaurantee equitable outcomes."
                         imageUrl={stefinImg}
                         linkedinUrl="https://www.linkedin.com/in/stephen-pasternak-11979b155/"
                         websiteUrl="https://www.stefinpasternak.com/"
