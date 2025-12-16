@@ -64,7 +64,7 @@ export const Projects: React.FC<{ onScrollToBounties: (projectId: string) => voi
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                     <ProjectCard
                         title="WordPress IBC"
-                        description="An Industry Backed Course and credential designed to bridge the workforce employment gap using high-demand WordPress skills."
+                        description="Industry-backed GenAI credential and courses that help learners earn living-wage jobs through a portfolio of real work."
                         icon={<GraduationCap className="w-8 h-8" />}
                         bountyId="wordpress-ibc" // Placeholder ID, need to map to actual repo or label if exists, or use 'all' for now
                         onBountyClick={handleProjectClick}
