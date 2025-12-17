@@ -17,9 +17,18 @@ function App() {
     if (projectId) {
       setSelectedProject(projectId);
     }
-    const bountiesSection = document.getElementById('bounties-section');
-    if (bountiesSection) {
-      bountiesSection.scrollIntoView({ behavior: 'smooth' });
+
+    // Try to find the heading first for better accessibility
+    const heading = document.getElementById('open-bounties-heading');
+    if (heading) {
+      heading.scrollIntoView({ behavior: 'smooth' });
+      heading.focus({ preventScroll: true });
+    } else {
+      // Fallback to section container
+      const bountiesSection = document.getElementById('bounties-section');
+      if (bountiesSection) {
+        bountiesSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 

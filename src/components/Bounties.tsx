@@ -73,17 +73,33 @@ export const Bounties: React.FC<BountiesProps> = ({ selectedProject = 'all', onS
         fetchBounties();
     }, []);
 
+    const [announcement, setAnnouncement] = useState('');
+
     const filteredBounties = selectedProject === 'all'
         ? bounties
         : bounties.filter(b => b.projectId === selectedProject);
 
     const getProjectName = (id: string) => REPOS.find(r => r.id === id)?.displayName || id;
 
+    useEffect(() => {
+        if (loading) return;
+
+        const count = filteredBounties.length;
+        const projectName = selectedProject === 'all' ? 'All Projects' : getProjectName(selectedProject);
+        setAnnouncement(`Showing ${projectName}. ${count} ${count === 1 ? 'bounty' : 'bounties'} found.`);
+    }, [selectedProject, filteredBounties.length, loading]);
+
     return (
-        <section id="bounties-section" className="py-20 bg-white">
+        <section className="py-20 bg-white">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-uic-blue mb-4">Open Bounties</h2>
+                    <h2
+                        id="open-bounties-heading"
+                        tabIndex={-1}
+                        className="text-3xl md:text-4xl font-bold text-uic-blue mb-4 outline-none focus:ring-2 focus:ring-offset-2 focus:ring-uic-blue rounded-sm"
+                    >
+                        Open Bounties
+                    </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                         The fund manages bounties for projects that work toward the public good.
                     </p>
@@ -101,7 +117,7 @@ export const Bounties: React.FC<BountiesProps> = ({ selectedProject = 'all', onS
                 </div>
 
                 {/* Filter */}
-                <div className="flex justify-center mb-8">
+                <nav className="flex justify-center mb-8" aria-label="Bounty filters">
                     <div className="inline-flex bg-gray-100 p-1 rounded-lg">
                         <button
                             onClick={() => handleSelectProject('all')}
@@ -127,7 +143,7 @@ export const Bounties: React.FC<BountiesProps> = ({ selectedProject = 'all', onS
                             </button>
                         ))}
                     </div>
-                </div>
+                </nav>
 
                 {/* Content */}
                 {loading ? (
@@ -171,7 +187,8 @@ export const Bounties: React.FC<BountiesProps> = ({ selectedProject = 'all', onS
                                                 className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium"
                                                 style={{ backgroundColor: `#${label.color}20`, color: `#${label.color}` }}
                                             >
-                                                <Tag className="w-3 h-3 mr-1" />
+                                                <Tag className="w-3 h-3 mr-1" aria-hidden="true" />
+                                                <span className="sr-only">Tag: </span>
                                                 {label.name}
                                             </span>
                                         ))}
@@ -194,6 +211,10 @@ export const Bounties: React.FC<BountiesProps> = ({ selectedProject = 'all', onS
                         ))}
                     </div>
                 )}
+                {/* Live region for status updates */}
+                <div role="status" aria-live="polite" className="sr-only">
+                    {announcement}
+                </div>
             </div>
         </section>
     );
