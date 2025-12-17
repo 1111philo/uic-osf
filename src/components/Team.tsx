@@ -77,7 +77,7 @@ export const Team: React.FC = () => {
                     />
 
                     <TeamMember
-                        name="Jaeun Jemma Ku"
+                        name="JaEun Jemma Ku"
                         bio="Managing UIC relationships to ensure maximum impact."
                         imageUrl={jemmaImg}
                         linkedinUrl="https://www.linkedin.com/in/jemmaku/"
