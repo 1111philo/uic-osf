@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowRight, Brain, Accessibility, GraduationCap } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Brain, Accessibility } from 'lucide-react';
 
 interface ProjectCardProps {
     title: string;
@@ -8,11 +8,10 @@ interface ProjectCardProps {
     logoUrl?: string;
     bountyId: string;
     onBountyClick: (id: string) => void;
-    isActive: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, icon, logoUrl, bountyId, onBountyClick, isActive }) => (
-    <div className={`bg-white rounded-xl shadow-lg p-8 border transition-all duration-300 flex flex-col h-full ${isActive ? 'ring-2 ring-uic-blue border-uic-blue' : 'border-gray-100 hover:shadow-xl'}`}>
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, icon, logoUrl, bountyId, onBountyClick }) => (
+    <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
         <div className="mb-6 h-16 flex items-center justify-start">
             {logoUrl ? (
                 <img src={logoUrl} alt={`${title} Logo`} className="h-full object-contain max-w-[200px]" />
@@ -32,22 +31,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, icon, log
 
         <button
             onClick={() => onBountyClick(bountyId)}
-            className={`w-full py-3 px-6 font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center group ${isActive
-                ? 'bg-uic-blue text-white shadow-md'
-                : 'bg-gray-50 text-uic-blue hover:bg-uic-blue hover:text-white'}`}
-            aria-pressed={isActive}
+            className="w-full py-3 px-6 font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center group bg-gray-50 text-uic-blue hover:bg-uic-blue hover:text-white"
         >
-            {isActive ? 'Viewing Bounties' : `${title} Bounties`}
+            {`${title} Bounties`}
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </button>
     </div>
 );
 
 export const Projects: React.FC<{ onScrollToBounties: (projectId: string) => void }> = ({ onScrollToBounties }) => {
-    const [activeProject, setActiveProject] = useState<string>('all');
 
     const handleProjectClick = (projectId: string) => {
-        setActiveProject(projectId);
         onScrollToBounties(projectId);
     };
 
@@ -61,23 +55,15 @@ export const Projects: React.FC<{ onScrollToBounties: (projectId: string) => voi
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    <ProjectCard
-                        title="WordPress IBC"
-                        description="Industry-backed GenAI credential and courses that help learners earn living-wage jobs through a portfolio of real work."
-                        icon={<GraduationCap className="w-8 h-8" />}
-                        bountyId="wordpress-ibc" // Placeholder ID, need to map to actual repo or label if exists, or use 'all' for now
-                        onBountyClick={handleProjectClick}
-                        isActive={activeProject === 'wordpress-ibc'}
-                    />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
+
 
                     <ProjectCard
                         title="AI Leaders"
-                        description="An Industry-backed AI Literacy curriculum empowering the next generation of tech leaders with essential AI skills and ethics."
+                        description="Empowering the next generation of tech leaders with Generative AI Literacy activities that work toward a WordPress-powered portfolio."
                         icon={<Brain className="w-8 h-8" />}
                         bountyId="ai-leaders"
                         onBountyClick={handleProjectClick}
-                        isActive={activeProject === 'ai-leaders'}
                     />
 
                     <ProjectCard
@@ -87,7 +73,6 @@ export const Projects: React.FC<{ onScrollToBounties: (projectId: string) => voi
                         logoUrl="https://equalify.app/wp-content/uploads/2024/04/Equalify-Logo-768x237.png"
                         bountyId="equalify"
                         onBountyClick={handleProjectClick}
-                        isActive={activeProject === 'equalify'}
                     />
 
 
@@ -96,7 +81,7 @@ export const Projects: React.FC<{ onScrollToBounties: (projectId: string) => voi
                 <div className="text-center">
                     <button
                         onClick={() => handleProjectClick('all')}
-                        className={`inline-flex items-center px-6 py-3 rounded-full text-sm font-bold transition-colors ${activeProject === 'all' ? 'bg-gray-800 text-white' : 'bg-white text-gray-600 border border-gray-200 hover:border-gray-400'}`}
+                        className="inline-flex items-center px-6 py-3 rounded-full text-sm font-bold transition-colors bg-white text-gray-600 border border-gray-200 hover:border-gray-400"
                     >
                         View All Bounties
                     </button>

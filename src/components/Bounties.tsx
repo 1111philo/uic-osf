@@ -22,7 +22,7 @@ interface RepoConfig {
 const REPOS: RepoConfig[] = [
     { id: 'ai-leaders', owner: '1111philo', name: 'ai-leaders', displayName: 'AI Leaders' },
     { id: 'equalify', owner: 'EqualifyEverything', name: 'equalify', displayName: 'Equalify' },
-    { id: 'wordpress-ibc', owner: 'automattic', name: 'wordpress-ibc', displayName: 'WordPress IBC' },
+
 ];
 
 interface BountiesProps {
