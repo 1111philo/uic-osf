@@ -59,7 +59,7 @@ export const Projects: React.FC<{ onScrollToBounties: (projectId: string) => voi
 
 
                     <ProjectCard
-                        title="AI Leaders"
+                        title="AI Leaders Library"
                         description="Empowering the next generation of tech leaders with Generative AI Literacy activities that work toward a WordPress-powered, workforce-focused portfolio."
                         icon={<Brain className="w-8 h-8" />}
                         bountyId="ai-leaders"

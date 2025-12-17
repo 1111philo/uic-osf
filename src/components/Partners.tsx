@@ -1,6 +1,7 @@
 import React from 'react';
 import { Handshake } from 'lucide-react';
 import automatticLogo from '../assets/automattic.png';
+import wordpressLogo from '../assets/wordpress-logotype.png';
 
 export const Partners: React.FC = () => {
     const scrollToSolicitation = () => {
@@ -40,6 +41,27 @@ export const Partners: React.FC = () => {
                                 }}
                             />
                             <span className="hidden text-2xl font-bold text-gray-800">Automattic</span>
+                        </div>
+                    </a>
+
+                    {/* WordPress Partner Card */}
+                    <a
+                        href="https://wordpress.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex flex-col items-center p-8 rounded-xl hover:bg-gray-50 transition-all duration-300"
+                    >
+                        <div className="w-64 h-24 flex items-center justify-center mb-6 grayscale group-hover:grayscale-0 opacity-80 group-hover:opacity-100 transition-all">
+                            <img
+                                src={wordpressLogo}
+                                alt="WordPress"
+                                className="w-full h-full object-contain"
+                                onError={(e) => {
+                                    e.currentTarget.style.display = 'none';
+                                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                                }}
+                            />
+                            <span className="hidden text-2xl font-bold text-gray-800">WordPress</span>
                         </div>
                     </a>
                 </div>
