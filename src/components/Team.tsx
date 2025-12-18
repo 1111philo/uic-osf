@@ -5,6 +5,7 @@ import stefinImg from '../assets/stefin.jpeg';
 import jemmaImg from '../assets/jemma.jpg';
 import maryImg from '../assets/mary.jpg';
 import jasonImg from '../assets/jason.jpg';
+import michelleImg from '../assets/michelle.jpg';
 
 interface TeamMemberProps {
     name: string;
@@ -82,6 +83,13 @@ export const Team: React.FC = () => {
                         imageUrl={jemmaImg}
                         linkedinUrl="https://www.linkedin.com/in/jemmaku/"
                         websiteUrl="https://it.uic.edu/profiles/jaeun-jemma-ku/"
+                    />
+
+                    <TeamMember
+                        name="Michelle Mitchell"
+                        bio="Elevating relevant work and solving problems before they exist. Making the fund work."
+                        imageUrl={michelleImg}
+                        linkedinUrl="https://www.linkedin.com/in/michelle-mitchell-3a6a5017b/"
                     />
 
                     <TeamMember
