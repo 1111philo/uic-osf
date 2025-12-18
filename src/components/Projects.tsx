@@ -65,7 +65,7 @@ export const Projects: React.FC<{ onScrollToBounties: (projectId: string) => voi
                     <ProjectCard
                         title="AI Leaders"
                         subtitle="WordPress Edition"
-                        description="Course material empowering learners to get jobs that require AI skills. Our first course, available in June, will focus on preparing learners for WordPress jobs."
+                        description="Generative AI course material empowering learners to get jobs that require AI skills. Our first course, available in June, will focus on preparing learners for WordPress jobs."
                         icon={<Brain className="w-8 h-8" />}
                         bountyId="ai-leaders"
                         onBountyClick={handleProjectClick}
@@ -73,7 +73,7 @@ export const Projects: React.FC<{ onScrollToBounties: (projectId: string) => voi
 
                     <ProjectCard
                         title="Equalify"
-                        description="A Social Benefit accessibility ecosystem taking the complexity out of compliance by making automated testing and remediation tools available to everyone."
+                        description="An Open Source digital accessibility ecosystem, focused on making high quality accessibility tools available to everyone."
                         icon={<Accessibility className="w-8 h-8" />}
                         logoUrl="https://equalify.app/wp-content/uploads/2024/04/Equalify-Logo-768x237.png"
                         bountyId="equalify"
