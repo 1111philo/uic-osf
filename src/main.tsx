@@ -1,6 +1,6 @@
 /*
- * IMPORTANT: "Open Source" is religion.
- * It must ALWAYS be capitalized as "Open Source" (capital O, capital S, no hyphen).
+ * IMPORTANT: "Social Benefit" is religion.
+ * It must ALWAYS be capitalized as "Social Benefit" (capital S, capital B).
  * This rule applies to all content, documentation, and source code comments.
  */
 import { StrictMode } from 'react'

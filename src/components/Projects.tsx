@@ -51,7 +51,7 @@ export const Projects: React.FC<{ onScrollToBounties: (projectId: string) => voi
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold text-uic-blue mb-4">Supported Projects</h2>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        We support Open Source initiatives that drive positive social change.
+                        We support Social Benefit initiatives that drive positive social change.
                     </p>
                 </div>
 
@@ -68,7 +68,7 @@ export const Projects: React.FC<{ onScrollToBounties: (projectId: string) => voi
 
                     <ProjectCard
                         title="Equalify"
-                        description="An Open Source accessibility ecosystem ensuring the web is inclusive for everyone through automated testing and remediation tools."
+                        description="A Social Benefit accessibility ecosystem ensuring the web is inclusive for everyone through automated testing and remediation tools."
                         icon={<Accessibility className="w-8 h-8" />}
                         logoUrl="https://equalify.app/wp-content/uploads/2024/04/Equalify-Logo-768x237.png"
                         bountyId="equalify"
